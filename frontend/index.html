@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PopuSim - Autonomous Persona Website Simulation</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+            },
+            colors: {
+              darkBg: '#090d16',
+              darkCard: '#111827',
+              darkBorder: '#1f2937',
+              neonCyan: '#06b6d4',
+              neonPurple: '#8b5cf6',
+              neonGreen: '#10b981',
+              neonRed: '#ef4444',
+              neonOrange: '#f97316'
+            },
+            boxShadow: {
+              neonCyan: '0 0 15px rgba(6, 182, 212, 0.4)',
+              neonPurple: '0 0 15px rgba(139, 92, 246, 0.4)',
+              neonGreen: '0 0 15px rgba(16, 185, 129, 0.4)',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+      body {
+        background-color: #090d16;
+        color: #f3f4f6;
+        font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+        overflow-x: hidden;
+      }
+      
+      /* Smooth scrollbars */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #090d16;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1f2937;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #374151;
+      }
+
+      @media print {
+        body {
+          background-color: #ffffff !important;
+          color: #111827 !important;
+          font-size: 12px !important;
+        }
+        header, .no-print, button, form, #chat-sidebar {
+          display: none !important;
+        }
+        main {
+          max-width: 100% !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+        .bg-darkCard, .bg-darkBg, .bg-darkBg\/30, .bg-darkBg\/60 {
+          background-color: #ffffff !important;
+          background: #ffffff !important;
+          border-color: #e5e7eb !important;
+          box-shadow: none !important;
+          color: #111827 !important;
+        }
+        .border-darkBorder, .border-darkBorder\/60, .border-darkBorder\/40, .border-darkBorder\/20 {
+          border-color: #e5e7eb !important;
+        }
+        h1, h2, h3, h4, p, span, li, td, th, strong, code {
+          color: #111827 !important;
+          text-shadow: none !important;
+        }
+        /* Expand all scrollable containers so content is not cut off */
+        .overflow-y-auto, .overflow-auto {
+          overflow: visible !important;
+          max-height: none !important;
+        }
+        /* Recharts SVG chart styling overrides */
+        .recharts-text {
+          fill: #111827 !important;
+        }
+        .recharts-cartesian-grid-line line {
+          stroke: #e5e7eb !important;
+        }
+        .recharts-cartesian-axis-line {
+          stroke: #e5e7eb !important;
+        }
+        /* NPS Speedometer Gauge print styling */
+        .nps-gauge-track {
+          stroke: #e5e7eb !important;
+        }
+        .nps-needle-pin {
+          fill: #111827 !important;
+        }
+        .nps-needle-line {
+          stroke: #111827 !important;
+        }
+        /* Heatmap cell print color overrides */
+        .bg-neonPurple {
+          background-color: #8b5cf6 !important;
+          color: #ffffff !important;
+        }
+        .bg-neonPurple\/40 {
+          background-color: #c084fc !important;
+          color: #111827 !important;
+        }
+        .bg-neonPurple\/20 {
+          background-color: #f3e8ff !important;
+          color: #6b21a8 !important;
+        }
+        .bg-darkBg {
+          background-color: #f3f4f6 !important;
+          color: #4b5563 !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-darkBg text-gray-100 min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
